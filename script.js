@@ -13,3 +13,56 @@ function computerPlay()
     return random;
 }
 
+function singleRound( playerSelection, computerSelection)
+{
+    //confront the cases and decrees the winner
+    //rock is 0, paper is 1, scissors is 2
+    
+    //if the player has entered rock
+    if (playerSelection == 0 && computerSelection == 0)
+    {
+        return "tie";
+    }
+
+    if (playerSelection == 0 && computerSelection == 1)
+    {
+        return "You lost! Rock loses against paper!";
+    }
+
+    if (playerSelection == 0 && computerSelection == 2)
+    {
+        return "You won! Rock beats scissors!";
+    }
+
+    //if the player has entered paper
+    if (playerSelection == 1 && computerSelection == 0)
+    {
+        return "You won! Paper beats rock!";
+    }
+
+    if (playerSelection == 1 && computerSelection == 1)
+    {
+        return "Tie!";
+    }
+
+    if (playerSelection == 1 && computerSelection == 2)
+    {
+        return "You lost! Paper loses against scissors";
+    }
+
+    //if the player has entered scissors
+    if (playerSelection == 2 && computerSelection == 0)
+    {
+        return "You lost! Scissors loses against rock" ;
+    }
+
+    if (playerSelection == 2 && computerSelection == 1)
+    {
+        return "You won! Scissors beats paper";
+    }
+
+    if (playerSelection == 2 && computerSelection == 2)
+    {
+        return "Tie!";
+    }
+}
