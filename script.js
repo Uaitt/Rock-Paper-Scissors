@@ -149,3 +149,5 @@ function game ()
     if (computerScore == 5)
         console.log ("You lost the match!\n");
 }
+
+game();
