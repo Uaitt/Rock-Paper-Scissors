@@ -7,7 +7,7 @@ function computerPlay()
     let random;
     
     //generate the random number and assign it to the variable
-    random = Math.floor(Math.random() * 3);
+    random = Math.floor(Math.random() * 3);    
 
     //return that variable
     return random;
@@ -95,4 +95,57 @@ function convertNumber(number)
     
     if ( number == 2)
         return "scissor";
+}
+
+function game ()
+{
+    //set the playerScore and computerScore to 0
+    let playerScore = 0;
+    let computerScore = 0;
+
+    let inputUser;
+    let userSelection;
+    let computerSelection;
+
+    //while player score and computer score are both less than 5
+    while(playerScore < 5 && computerScore < 5)
+    {
+        //ask the user for input
+        inputUser = window.prompt ("Enter your selection. Choose from rock, paper or scissor");
+
+        //convert the input to lower case, hence the user can input what he/she wants
+        inputUser = inputUser.toLowerCase();
+
+        //generate the corresponding number to the user
+        userSelection = convertString (inputUser);
+
+        //generate the computer selection
+        computerSelection = computerPlay();
+
+        //if the user won
+        if (singleRound(userSelection, computerSelection) == 1)
+        {
+            //increment the playerScore
+            playerScore++;
+
+            console.log("You won!\n");
+            console.log(inputUser + "beats" + convertNumber(computerSelection) + "!\n");
+        }
+
+        //if the computer won
+        if (singleRound(userSelection,computerSelection) == -1)
+        {
+            computerScore++;
+            console.log("You lost!\n");
+            console.log(inputUser + "loses to" + convertNumber(computerSelection) + "!\n");
+        }
+
+        //if it is a tie don't do anything
+    }
+
+    if (playerScore == 5)
+        console.log("You won!\n");
+    
+    if (computerScore == 5)
+        console.log ("You lost the match!\n");
 }
