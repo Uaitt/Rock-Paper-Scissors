@@ -129,7 +129,7 @@ function game ()
             playerScore++;
 
             console.log("You won!\n");
-            console.log(inputUser + "beats" + convertNumber(computerSelection) + "!\n");
+            console.log(inputUser + " beats " + convertNumber(computerSelection) + "!\n");
         }
 
         //if the computer won
@@ -137,7 +137,7 @@ function game ()
         {
             computerScore++;
             console.log("You lost!\n");
-            console.log(inputUser + "loses to" + convertNumber(computerSelection) + "!\n");
+            console.log(inputUser + " loses to " + convertNumber(computerSelection) + "!\n");
         }
 
         //if it is a tie don't do anything
