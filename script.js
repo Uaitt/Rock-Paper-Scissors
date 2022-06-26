@@ -16,53 +16,83 @@ function computerPlay()
 function singleRound( playerSelection, computerSelection)
 {
     //confront the cases and decrees the winner
-    //rock is 0, paper is 1, scissors is 2
-    
+    //tie is 0, win is 1, loss is -1
+
     //if the player has entered rock
     if (playerSelection == 0 && computerSelection == 0)
     {
-        return "tie";
+        return 0;   //rock vs rock
     }
 
     if (playerSelection == 0 && computerSelection == 1)
     {
-        return "You lost! Rock loses against paper!";
+        return -1;  //rock vs paper
     }
 
     if (playerSelection == 0 && computerSelection == 2)
     {
-        return "You won! Rock beats scissors!";
+        return 1;   //rock vs scissors
     }
 
     //if the player has entered paper
     if (playerSelection == 1 && computerSelection == 0)
     {
-        return "You won! Paper beats rock!";
+        return 1;   //paper vs rock
     }
 
     if (playerSelection == 1 && computerSelection == 1)
     {
-        return "Tie!";
+        return 0;   //paper vs paper
     }
 
     if (playerSelection == 1 && computerSelection == 2)
     {
-        return "You lost! Paper loses against scissors";
+        return -1;  //paper vs scissors
     }
 
     //if the player has entered scissors
     if (playerSelection == 2 && computerSelection == 0)
     {
-        return "You lost! Scissors loses against rock" ;
+        return -1;  //scissors vs rock
     }
 
     if (playerSelection == 2 && computerSelection == 1)
     {
-        return "You won! Scissors beats paper";
+        return 1;   //scissors vs paper
     }
 
     if (playerSelection == 2 && computerSelection == 2)
     {
-        return "Tie!";
+        return 0;   //scissors vs scissors
     }
+}
+
+function convertString(quote)
+{   
+    //convert a string to a number
+    //0 is rock, 1 is paper, 2 is scissors
+    if ( quote == "rock")
+        return 0;
+
+    if ( quote == "paper")
+        return 1;
+
+    if ( quote == "scissors")
+        return 2;
+    
+    
+}
+
+function convertNumber(number)
+{
+    //convert a number to the mapped string in this game
+
+    if ( number == 0)
+        return "rock";
+    
+    if ( number == 1)
+        return "paper";
+    
+    if ( number == 2)
+        return "scissor";
 }
