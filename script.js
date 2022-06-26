@@ -94,7 +94,7 @@ function convertNumber(number)
         return "paper";
     
     if ( number == 2)
-        return "scissor";
+        return "scissors";
 }
 
 function game ()
@@ -111,7 +111,7 @@ function game ()
     while(playerScore < 5 && computerScore < 5)
     {
         //ask the user for input
-        inputUser = window.prompt ("Enter your selection. Choose from rock, paper or scissor");
+        inputUser = window.prompt ("Enter your selection. Choose from rock, paper or scissors");
 
         //convert the input to lower case, hence the user can input what he/she wants
         inputUser = inputUser.toLowerCase();
