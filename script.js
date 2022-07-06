@@ -1,6 +1,3 @@
-//this javascript program will be executed and its instructions will directly affect our main webpage, because it is linked thanks to a <script> element directly on that
-//it's like that this program will run through the webpage and performs some action on it(print something to the console, add something to our index.html webpage, remove some elements...)
-
 function computerPlay()
 {
     //return randomly rock, paper or scissor
