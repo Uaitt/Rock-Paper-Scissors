@@ -98,12 +98,12 @@ function game ()
     let playerScoreElement;
     let computerScoreElement;
 
+    //get all the references
     currentRoundResult = document.querySelector("#current-result");
     playerScoreElement = document.querySelector("#user-score");
     computerScoreElement = document.querySelector("#computer-score");
-
-
     inputsUser = document.querySelectorAll("button");
+
     inputsUser.forEach( (input) => input.addEventListener("click", () => {  /*the forEach method loops through the nodeList and calls 
                                                                               the callback (arrow) function for every item of the list,
                                                                               setting an EventListener that will be triggered for anyone
@@ -132,8 +132,8 @@ function game ()
         }
 
         //output the score at every round
-        playerScoreElement.textContent = playerScore;
-        computerScoreElement.textContent = computerScore;
+        playerScoreElement.textContent = "Player score " + playerScore;
+        computerScoreElement.textContent = "Computer score " + computerScore;
 
         if (playerScore == 5){
             currentRoundResult.textContent= "You won the match!\n";
