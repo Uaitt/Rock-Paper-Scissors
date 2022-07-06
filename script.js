@@ -94,7 +94,15 @@ function game ()
 
     let inputsUser; //nodeList that will store the references of the buttons
     let computerSelection;
-        
+    let currentRoundResult;
+    let playerScoreElement;
+    let computerScoreElement;
+
+    currentRoundResult = document.querySelector("#current-result");
+    playerScoreElement = document.querySelector("#user-score");
+    computerScoreElement = document.querySelector("#computer-score");
+
+
     inputsUser = document.querySelectorAll("button");
     inputsUser.forEach( (input) => input.addEventListener("click", () => {  /*the forEach method loops through the nodeList and calls 
                                                                               the callback (arrow) function for every item of the list,
@@ -111,25 +119,29 @@ function game ()
         {
             playerScore++;
 
-            console.log("You won!\n");
-            console.log(input.textContent + " beats " + convertNumber(computerSelection) + "!\n");
+            currentRoundResult.textContent = "You won!\n";
+            currentRoundResult.textContent += input.textContent + " beats " + convertNumber(computerSelection) + "!\n";
         }
 
         if (singleRound(convertString(input.textContent),computerSelection) == -1)
         {
             computerScore++;
 
-            console.log("You lost!\n");
-            console.log(input.textContent + " loses to " + convertNumber(computerSelection) + "!\n");
+            currentRoundResult.textContent = "You lost!\n";
+            currentRoundResult.textContent += input.textContent + " loses to " + convertNumber(computerSelection) + "!\n";
         }
 
+        //output the score at every round
+        playerScoreElement.textContent = playerScore;
+        computerScoreElement.textContent = computerScore;
+
         if (playerScore == 5){
-            console.log("You won the match!\n");
+            currentRoundResult.textContent= "You won the match!\n";
             return;
         }
         
         if (computerScore == 5){
-            console.log ("You lost the match!\n");
+            currentRoundResult.textContent="You lost the match!\n";
             return;
         }
     } ));
