@@ -71,8 +71,7 @@ function convertString(quote)
 
     if ( quote == "scissors")
         return 2;
-    
-    
+      
 }
 
 function convertNumber(number)
@@ -93,43 +92,48 @@ function game ()
     let playerScore = 0;
     let computerScore = 0;
 
-    let inputUser;
-    let userSelection;
+    let inputsUser; //nodeList that will store the references of the buttons
     let computerSelection;
+        
+    inputsUser = document.querySelectorAll("button");
+    inputsUser.forEach( (input) => input.addEventListener("click", () => {  /*the forEach method loops through the nodeList and calls 
+                                                                              the callback (arrow) function for every item of the list,
+                                                                              setting an EventListener that will be triggered for anyone
+                                                                              of them once the user clicks on the button*/
 
-    while(playerScore < 5 && computerScore < 5)
-    {
-        inputUser = window.prompt ("Enter your selection. Choose from rock, paper or scissors");    //the prompt method returns the string entered by the user in the input text field
-
-        inputUser = inputUser.toLowerCase();
-
-        userSelection = convertString (inputUser);
-
+        //note that you don't need loops for EventListener, every time the event happens the function will be activated no matter what
         computerSelection = computerPlay();
 
-        if (singleRound(userSelection, computerSelection) == 1)
+        if (singleRound(convertString(input.textContent), computerSelection) == 1)  /*this arrow function is a nested function to the first 
+                                                                                      callback function passed to forEach method, hence in is a closure.
+                                                                                      This means that this function will inherit the variables of the outer
+                                                                                      function, such as the variable input*/
         {
             playerScore++;
 
             console.log("You won!\n");
-            console.log(inputUser + " beats " + convertNumber(computerSelection) + "!\n");
+            console.log(input.textContent + " beats " + convertNumber(computerSelection) + "!\n");
         }
 
-        if (singleRound(userSelection,computerSelection) == -1)
+        if (singleRound(convertString(input.textContent),computerSelection) == -1)
         {
             computerScore++;
 
             console.log("You lost!\n");
-            console.log(inputUser + " loses to " + convertNumber(computerSelection) + "!\n");
+            console.log(input.textContent + " loses to " + convertNumber(computerSelection) + "!\n");
         }
 
-    }
+        if (playerScore == 5){
+            console.log("You won the match!\n");
+            return;
+        }
+        
+        if (computerScore == 5){
+            console.log ("You lost the match!\n");
+            return;
+        }
+    } ));
 
-    if (playerScore == 5)
-        console.log("You won the match!\n");
-    
-    if (computerScore == 5)
-        console.log ("You lost the match!\n");
 }
 
 game();
