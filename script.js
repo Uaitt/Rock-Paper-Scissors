@@ -1,11 +1,8 @@
 function computerPlay()
 {
     //rock will be 0, paper will be 1, scissor will be 2
-
-    let random;
-    
     //generate the random number between 3 possible choices and assign it to the variable
-    random = Math.floor(Math.random() * 3); 
+    let random = Math.floor(Math.random() * 3); 
 
     return random;
 }
@@ -13,56 +10,36 @@ function computerPlay()
 function singleRound( playerSelection, computerSelection)
 {
     //tie is 0, win is 1, loss is -1
-
     if (playerSelection == 0 && computerSelection == 0)
-    {
         return 0;   //rock vs rock
-    }
 
     if (playerSelection == 0 && computerSelection == 1)
-    {
         return -1;  //rock vs paper
-    }
 
     if (playerSelection == 0 && computerSelection == 2)
-    {
         return 1;   //rock vs scissors
-    }
 
     if (playerSelection == 1 && computerSelection == 0)
-    {
         return 1;   //paper vs rock
-    }
 
     if (playerSelection == 1 && computerSelection == 1)
-    {
         return 0;   //paper vs paper
-    }
 
     if (playerSelection == 1 && computerSelection == 2)
-    {
         return -1;  //paper vs scissors
-    }
 
     if (playerSelection == 2 && computerSelection == 0)
-    {
         return -1;  //scissors vs rock
-    }
 
     if (playerSelection == 2 && computerSelection == 1)
-    {
         return 1;   //scissors vs paper
-    }
 
     if (playerSelection == 2 && computerSelection == 2)
-    {
         return 0;   //scissors vs scissors
-    }
 }
 
 function convertString(quote)
-{   
-    
+{    
     if ( quote == "rock")
         return 0;
 
@@ -70,13 +47,11 @@ function convertString(quote)
         return 1;
 
     if ( quote == "scissors")
-        return 2;
-      
+        return 2;      
 }
 
 function convertNumber(number)
 {
-
     if ( number == 0)
         return "rock";
     
@@ -92,17 +67,13 @@ function game ()
     let playerScore = 0;
     let computerScore = 0;
 
-    let inputsUser; //nodeList that will store the references of the buttons
     let computerSelection;
-    let currentRoundResult;
-    let playerScoreElement;
-    let computerScoreElement;
 
     //get all the references
-    currentRoundResult = document.querySelector("#current-result");
-    playerScoreElement = document.querySelector("#user-score");
-    computerScoreElement = document.querySelector("#computer-score");
-    inputsUser = document.querySelectorAll("button");
+    let currentRoundResult = document.querySelector("#current-result");
+    let playerScoreNode = document.querySelector("#user-score");
+    let computerScoreNode = document.querySelector("#computer-score");
+    let inputsUser = document.querySelectorAll("button");  //nodeList that will store the references of the buttons
 
     inputsUser.forEach( (input) => input.addEventListener("click", () => {  /*the forEach method loops through the nodeList and calls 
                                                                               the callback (arrow) function for every item of the list,
@@ -132,8 +103,8 @@ function game ()
         }
 
         //output the score at every round
-        playerScoreElement.textContent = "Player score " + playerScore;
-        computerScoreElement.textContent = "Computer score " + computerScore;
+        playerScoreNode.textContent = "Player score " + playerScore;
+        computerScoreNode.textContent = "Computer score " + computerScore;
 
         if (playerScore == 5){
             currentRoundResult.textContent= "You won the match!\n";

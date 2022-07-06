@@ -1,0 +1,33 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h2,p{
+    text-align: center;
+}
+
+.buttons{
+    margin-bottom: 20px;
+}
+
+button{
+    padding:20px;
+    width:150px;
+    font-size: 25px;
+}
+
+
+#scores{
+    display: flex;
+    flex-direction: column;
+}
+
+.score{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

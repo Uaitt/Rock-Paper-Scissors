@@ -3,10 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <title>Rock-Paper-Scissors</title>
+        <link rel="stylesheet" href="./styles.css">
         <script src="./script.js" defer></script>  <!--our js programs is linked directly to the index.html page -->
     </head>
 
     <body>
+    <div id="header">
+        <h2>Rock-Paper-Scissors</h2>
+        <p>Will you be good enough to beat a computer in a game of Rock-Paper-Scissor?<p>
+        <p>The first that wins 5 rounds wins it all!</p>
+    </div>
 
     <div class="buttons">
         <button id="rock">rock</button>
@@ -14,11 +20,14 @@
         <button id="scissors">scissors</button>
     </div>
 
-        <div id="current-result"></div>
+    <div id="scores">
+        <div id="current-result">Press a button!</div>
 
-    <div class="score">
-        <div id="user-score"></div>
-        <div id="computer-score"></div>
+        <div class="score">
+            <div id="user-score">Player score 0</div>
+            <div id="computer-score">Computer score 0</div>
+        </div>
     </div>
+
     </body>
 </html>
