@@ -1,6 +1,14 @@
 # Rock-Paper-Scissors
-Today, after three weeks of working and studying js in the afternoon/evening, I'm finally ready to take on the first project from The Odin Project road map.
-I'm going to build a Rock-Paper-Scissors game that will be played only entirely from the developer console (the GUI will be added later).
+Rock-Paper-Scissors project for The Odin Project curriculum.\
+Live preview the webpage [here](https://uaitt.github.io/Rock-Paper-Scissors/)
 
-I'm pretty confident on this, coming from a C programming background I was able to grasp JS basics pretty easily and I remember almost everything about problem-solving.
-this is going to be fun!
+Things I have learned:
+1) JavaScript
+   - Store references of DOM nodes in with querySelector and querySelectorAll
+   - Add EventListeners for DOM nodes with addEventListener
+   - Loop through a nodeList with forEach and set multiple addEventListener with arrows functions
+   - Change the textContent of a DOM node
+   - Generate a random number between an intervall
+  
+ 
+   
